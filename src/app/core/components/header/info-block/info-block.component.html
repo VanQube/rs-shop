@@ -1,0 +1,152 @@
+<div class="header__wrapper">
+  <div class="header__main">
+    <button type="button" class="location__btn">
+      <div class="location__inner" data-testid="">
+        <img
+          src="../../../../../assets/pin.svg"
+          alt="Location"
+          width="26px"
+          height="20px"
+        />
+      </div>
+      <span>Минск</span>
+    </button>
+    <ul class="contacts__section">
+      <li class="contacts__item">
+        <a
+          href="https://www.viber.com/ru/"
+          class="contacts__item-inner viber__icon"
+          ><div class="item__icon">
+            <img
+              src="../../../../../assets/viber_logo.svg"
+              alt="Viber"
+              width="24px"
+              height="24px"
+            />
+          </div>
+          <span>Viber</span></a
+        >
+      </li>
+      <li class="contacts__item">
+        <div class="contacts__item-inner item__icon-default">
+          <div class="item__icon item__icon-a1">
+            <img
+              src="../../../../../assets/a1_logo.svg"
+              alt="A1"
+              width="24px"
+              height="24px"
+            />
+          </div>
+          <span
+            ><span><span>+375 29</span> 302 10 21</span></span
+          >
+        </div>
+      </li>
+      <div class="contacts__item">
+        <div class="contacts__item-wrapper">
+          <div>
+            <button
+              type="button"
+              [className]="
+                showContacts
+                  ? 'contacts__item-btn-active'
+                  : 'contacts__item-btn'
+              "
+              (click)="toggleContacts()"
+            >
+              Еще
+            </button>
+          </div>
+        </div>
+      </div>
+    </ul>
+    <div class="contacts__working-time">
+      <div class="contacts__working-icon">
+        <div>
+          <img
+            class="contacts__working-clocks"
+            src="../../../../../assets/clock.svg"
+            alt="Clocks"
+            width="20px"
+            height="20px"
+          />
+        </div>
+      </div>
+      <div class="contacts__working-text">
+        контакт-центр
+        <div>с&nbsp;<time>8:00</time>&nbsp;до&nbsp;<time>22:00</time></div>
+      </div>
+    </div>
+    <div class="dropdown__comunications">
+      <ul
+        *ngIf="showContacts"
+        class="dropdown__list dropdown__center dropdown__list-sticky"
+      >
+        <li class="dropdown__list-item">
+          <div>
+            <div class="dropdown__item-icon">
+              <div class="dropdown__item-icon-life" data-testid="">
+                <img
+                  src="../../../../../assets/life_logo.svg"
+                  alt="Life"
+                  width="24px"
+                  height="24px"
+                />
+              </div>
+            </div>
+            <span
+              ><span><span>+375 25</span> 502 10 21</span></span
+            >
+          </div>
+        </li>
+        <li class="dropdown__list-item">
+          <div>
+            <div class="dropdown__item-icon">
+              <div class="dropdown__item-icon-home" data-testid="">
+                <img
+                  src="../../../../../assets/home_logo.svg"
+                  alt="Home"
+                  width="24px"
+                  height="24px"
+                />
+              </div>
+            </div>
+            <span
+              ><span><span>+375 17</span> 302 10 21</span></span
+            >
+          </div>
+        </li>
+        <li class="dropdown__list-item">
+          <a href="https://telegram.org/" class="dropdown__item-box"
+            ><div class="dropdown__item-icon dropdown__item-telegram">
+              <div class="dropdown__item-icon-telegram">
+                <img
+                  src="../../../../../assets/telegram_logo.svg"
+                  alt="Telegram"
+                  width="24px"
+                  height="24px"
+                />
+              </div>
+            </div>
+            <span>Telegram</span></a
+          >
+        </li>
+        <li class="dropdown__list-item">
+          <a href="https://mail.google.com/mail/u/0/" class="dropdown__item-box"
+            ><div class="dropdown__item-icon">
+              <div>
+                <img
+                  src="../../../../../assets/email_logo.svg"
+                  alt="Email"
+                  width="24px"
+                  height="24px"
+                />
+              </div>
+            </div>
+            <span>Почта</span></a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

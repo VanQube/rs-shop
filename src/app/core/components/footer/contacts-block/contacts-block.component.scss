@@ -1,0 +1,66 @@
+.contacts-block {
+  margin-top: 32px;
+  box-sizing: border-box;
+  border-top: 1px solid rgba(213, 215, 219, 0.5);
+  padding-top: 12px;
+  text-align: center;
+}
+
+.contacts-block-inner {
+  margin: 0 auto;
+  max-width: 950px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  white-space: nowrap;
+}
+
+.contacts-block .a1 {
+  background-image: url(../../../../../assets/a1_logo.svg);
+}
+
+.contacts-block .contacts-block-item {
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  color: #1a1a1a;
+  font-size: 14px;
+  line-height: 24px;
+  padding-left: 26px;
+  border: 0;
+  background-repeat: no-repeat;
+  background-position: 0;
+  background-color: initial;
+}
+
+.contacts-block .life {
+  background-image: url(../../../../../assets/life_logo.svg);
+}
+
+.contacts-block .home {
+  background-image: url(../../../../../assets/home_logo.svg);
+}
+
+.contacts-block .viber {
+  background-image: url(../../../../../assets/viber_logo.svg);
+}
+
+.contacts-block .telegram {
+  background-image: url(../../../../../assets/telegram_logo.svg);
+}
+
+.contacts-block .email {
+  background-image: url(../../../../../assets/email_logo.svg);
+}
+
+.contacts-block .feedback {
+  display: flex;
+  align-items: center;
+  padding-left: 0;
+}
+
+.contacts-block .feedback img {
+  display: block;
+  padding-right: 2px;
+}

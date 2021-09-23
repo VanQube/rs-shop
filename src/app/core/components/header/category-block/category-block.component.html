@@ -1,0 +1,96 @@
+<div class="header__line">
+  <div class="header__wrapper">
+    <div class="promo__list">
+      <ul class="promo__items">
+        <li class="promo__item">
+          <a
+            (click)="updateIds($event, 'appliances', 'refrigerators')"
+            [routerLink]="[
+              '/main',
+              'subCategory',
+              'appliances',
+              'refrigerators'
+            ]"
+            >Холодильники</a
+          >
+        </li>
+        <li class="promo__item">
+          <a
+            (click)="updateIds($event, 'appliances', 'washing-machines')"
+            [routerLink]="[
+              '/main',
+              'subCategory',
+              'appliances',
+              'washing-machines'
+            ]"
+            >Стиральные машины</a
+          >
+        </li>
+        <li class="promo__item">
+          <a
+            (click)="updateIds($event, 'computers-peripherals', 'laptops')"
+            [routerLink]="[
+              '/main',
+              'subCategory',
+              'computers-peripherals',
+              'laptops'
+            ]"
+            >Ноутбуки</a
+          >
+        </li>
+        <li class="promo__item">
+          <a
+            (click)="updateIds($event, 'electronics', 'mobile')"
+            [routerLink]="['/main', 'subCategory', 'electronics', 'mobile']"
+            >Смартфоны</a
+          >
+        </li>
+        <li class="promo__item">
+          <a
+            (click)="updateIds($event, 'computers-peripherals', 'consoles')"
+            [routerLink]="[
+              '/main',
+              'subCategory',
+              'computers-peripherals',
+              'consoles'
+            ]"
+            >Игровые приставки</a
+          >
+        </li>
+        <li class="promo__item">
+          <a
+            (click)="updateIds($event, 'furniture', 'cabinets')"
+            [routerLink]="['/main', 'subCategory', 'furniture', 'cabinets']"
+            >Шкафы</a
+          >
+        </li>
+        <li class="promo__item">
+          <a
+            (click)="updateIds($event, 'furniture', 'sofas')"
+            [routerLink]="['/main', 'subCategory', 'furniture', 'sofas']"
+            >Диваны</a
+          >
+        </li>
+        <li class="promo__item">
+          <a
+            (click)="updateIds($event, 'hobbies', 'music-instruments')"
+            [routerLink]="[
+              '/main',
+              'subCategory',
+              'hobbies',
+              'music-instruments'
+            ]"
+            >Музыкальные инструменты</a
+          >
+        </li>
+        <li class="promo__item">
+          <a
+            (click)="updateIds($event, 'hobbies', 'books')"
+            [routerLink]="['/main', 'subCategory', 'hobbies', 'books']"
+            >Книги</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
