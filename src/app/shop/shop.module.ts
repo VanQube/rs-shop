@@ -26,6 +26,7 @@ import { CategoryPageComponent } from './pages/category-page/category-page.compo
 import { DetailedPageComponent } from './pages/detailed-page/detailed-page.component';
 import { CartPageComponent } from './pages/cart-page/cart-page.component';
 import { CarouselModule } from 'primeng/carousel';
+import { InputNumberModule } from 'primeng/inputnumber';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { CarouselModule } from 'primeng/carousel';
     TabViewModule,
     BreadcrumbModule,
     CarouselModule,
+    InputNumberModule,
   ],
   exports: [SliderBlockComponent, PopularBlockComponent],
   providers: [ShopService, UserService, ItemResolver, SubCategoryResolver],

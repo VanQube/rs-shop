@@ -1,1 +1,50 @@
-<p>cart-page works!</p>
+<p-dataView #dv [value]="cartItems" [rows]="5" layout="list">
+  <ng-template let-product pTemplate="listItem">
+    <div class="col-12">
+      <div class="product-list-item">
+        <img
+          [src]="product.imageUrls[0]"
+          [alt]="product.name"
+          style="height: 200px"
+        />
+        <div class="product-list-detail">
+          <div class="product-name">
+            <a [routerLink]="['/main', 'item', product.id]">
+              {{ product.name }}
+            </a>
+          </div>
+          <div class="product-description">{{ product.description }}</div>
+          <div class="flex align-items-center">
+            <p-button icon="pi pi-trash" label="Удалить" class="mx-3">
+            </p-button>
+          </div>
+        </div>
+        <div class="product-list-action flex flex-wrap">
+          <span class="product-price"
+            >{{
+              product.price * product.amountToOrder | number: "0.2"
+            }}
+            p.</span
+          >
+          <div class="flex">
+            <p-inputNumber
+              [(ngModel)]="product.amountToOrder"
+              [showButtons]="true"
+              buttonLayout="horizontal"
+              spinnerMode="horizontal"
+              inputId="horizontal"
+              decrementButtonClass="p-button-primary"
+              incrementButtonClass="p-button-primary"
+              incrementButtonIcon="pi pi-plus"
+              decrementButtonIcon="pi pi-minus"
+              [min]="1"
+              [max]="product.availableAmount"
+              [size]="1"
+            >
+            </p-inputNumber>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</p-dataView>
