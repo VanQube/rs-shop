@@ -1,0 +1,223 @@
+<div class="separator"></div>
+<div class="nav-header">
+  <div class="nav-wrapper">
+    <div class="logotype">
+      <a href="#"
+        ><img
+          src="../../../../../assets/shop_logo.png"
+          alt="Shop Logo"
+          width="250"
+          height="80"
+      /></a>
+      <span class="logotypeText">Онлайн-магазин Yeezy.com</span>
+    </div>
+    <button type="button" class="catalog__button" (click)="toggleCatalog()">
+      <div class="catalog__icon">
+        <div class="icon__square">
+          <div class="square__one"></div>
+        </div>
+        <div class="icon__square">
+          <div class="square__two"></div>
+        </div>
+        <div class="icon__square">
+          <div class="square__three"></div>
+        </div>
+        <div class="icon__square">
+          <div class="square__four"></div>
+        </div>
+      </div>
+      <span class="catalog__text">Каталог товаров</span>
+    </button>
+    <div class="search__field">
+      <div id="search" class="search__field-wrapper">
+        <fieldset class="search__field__input-wrap">
+          <button type="submit" class="search__field__submit" title="Искать">
+            <span>Поиск</span>
+          </button>
+          <input
+            #searchInput
+            type="text"
+            autocomplete="off"
+            id="search-field"
+            placeholder="Поиск товаров"
+            class="search__field__input"
+            pInputText
+            [(ngModel)]="searchInputValue"
+            (input)="searchInputValue.length > 3 ? op.show($event) : op.hide()"
+          /><span class="search_loader"></span
+          ><button type="button" class="search__field__clear">
+            Очистить поиск
+          </button>
+        </fieldset>
+      </div>
+    </div>
+    <app-account-dropdown></app-account-dropdown>
+    <div class="cart__header">
+      <a class="cart__wrapper cart__empty" [routerLink]="['/cart']"
+        ><span class="cart__icon"
+          ><div>
+            <img
+              src="../../../../../assets/shopping-cart.svg"
+              alt="Shopping Cart"
+              width="24px"
+              height="24px"
+            />
+          </div>
+          <span class="cart__counter"></span></span
+        ><span class="cart__label">Корзина</span></a
+      >
+    </div>
+  </div>
+</div>
+<div *ngIf="showCatalog" class="popup__container">
+  <div class="categories__container">
+    <div class="left__container">
+      <div class="list__container">
+        <div
+          *ngFor="let category of categories; index as i"
+          [id]="i"
+          (mouseenter)="getCategoryId(i)"
+        >
+          <a class="category__container category__button category__selected">
+            <span class="category__name">{{ category.name }}</span></a
+          >
+        </div>
+      </div>
+    </div>
+    <div class="right__container">
+      <div>
+        <div class="category__title">
+          {{ selectedCategory.name }}
+        </div>
+        <div class="category__content">
+          <div class="list__container-right">
+            <div class="category__column">
+              <div
+                class="category__container-right"
+                *ngFor="let subCategory of selectedCategories"
+              >
+                <a
+                  (click)="
+                    updateIds($event, selectedCategory.id, subCategory.id)
+                  "
+                  [routerLink]="[
+                    '/main',
+                    'subCategory',
+                    selectedCategory.id,
+                    subCategory.id
+                  ]"
+                  href="#"
+                  class="subcategory__container category__button-right"
+                  ><span class="category__name-right">
+                    {{ subCategory.name }}</span
+                  ></a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p-overlayPanel #op [showCloseIcon]="true" [style]="{ width: '450px' }">
+  <ng-template pTemplate>
+    <p-table
+      [value]="searchItems"
+      selectionMode="single"
+      [paginator]="true"
+      [rows]="3"
+      responsiveLayout="scroll"
+    >
+      <ng-template pTemplate="body" let-rowData let-product>
+        <tr
+          [pSelectableRow]="rowData"
+          [routerLink]="['/main', 'item', product.id]"
+        >
+          <td>{{ product.name }}</td>
+          <td>
+            <img
+              [src]="product.imageUrls[0]"
+              [alt]="product.image"
+              style="height: 90px"
+              class="product-image"
+            />
+          </td>
+          <td style="width: 100px">{{ product.price + " p." }}</td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </ng-template>
+</p-overlayPanel>
+
+<div *ngIf="showModal" id="modal" class="account__dropdown account__overlay">
+  <div role="button" class="account__backdrop">
+    <div class="modal__wrapper">
+      <div class="modal__header">
+        <div class="modal__container">
+          <div class="modal__close-icon" (click)="toggleModal()"></div>
+          &nbsp;
+        </div>
+      </div>
+      <div>
+        <div>
+          <div>
+            <form class="modal__form">
+              <h5 class="modal__form-title">Вход</h5>
+              <div>
+                <div>
+                  <div class="modal__input">
+                    <div aria-hidden="true" class="modal__label">
+                      <label for="login-email">Электронная почта</label>
+                    </div>
+                    <div class="modal__input-container">
+                      <input
+                        label="Электронная почта"
+                        maxlength="255"
+                        type="text"
+                        autocomplete="email"
+                        name="email"
+                        class="modal__input-content modal__password"
+                        id="login-email"
+                      />
+                    </div>
+                  </div>
+                  <div class="modal__input">
+                    <div class="modal__label">
+                      <label>Пароль</label>
+                    </div>
+                    <div class="modal__input-container">
+                      <input
+                        label="Пароль"
+                        type="password"
+                        autocomplete="current-password"
+                        name="password"
+                        class="modal__input-content modal__password"
+                      />
+                      <div class="modal__password-view">
+                        <img
+                          src="../../../../../assets/hide.svg"
+                          alt="Password View"
+                          width="24px"
+                          height="24px"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="modal__actions">
+                    <button class="modal__button" type="submit">Войти</button>
+                  </div>
+                  <div class="modal__bottom-links">
+                    <div><button type="button">Не помню пароль</button></div>
+                    <div><button type="button">Регистрация</button></div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

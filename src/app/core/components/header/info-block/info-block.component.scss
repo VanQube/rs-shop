@@ -1,0 +1,303 @@
+@import "../../../../variables.scss";
+
+ul {
+  list-style: none;
+}
+
+:host {
+  display: block;
+  background-color: $mainBackgroundColor;
+  width: 100%;
+}
+
+.location__btn {
+  display: flex;
+  align-items: center;
+  height: 20px;
+  margin-right: auto;
+  margin-bottom: 2px;
+  text-align: left;
+  border: 0;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  cursor: pointer;
+  background: none;
+  color: #1a1a1a;
+  transition: color 0.2s ease;
+}
+
+.location__btn:hover {
+  color: #d62761;
+}
+
+.location__icon {
+  margin: 0 7px 0 3px;
+}
+
+.contacts__section {
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 0 16px 0 12px;
+  margin: 12px;
+}
+
+.contacts__section:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  display: block;
+  height: 16px;
+  margin-top: -8px;
+  border-left: 1px solid black;
+}
+
+.contacts__item:first-child {
+  margin: 0;
+}
+
+.contacts__item {
+  position: relative;
+  margin-left: 12px;
+}
+
+.contacts__item-inner {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  text-decoration: none;
+  border: 0;
+  font-family: inherit;
+  font-size: inherit;
+  white-space: nowrap;
+  background: none;
+  color: #1a1a1a;
+  box-sizing: border-box;
+  cursor: pointer;
+  line-height: 20px;
+}
+
+.viber__icon {
+  margin-right: 2px;
+  color: #7c53a6;
+}
+
+.item__icon-a1 {
+  margin-right: 2px;
+}
+
+.item__icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 4px;
+}
+
+.item__icon-default {
+  cursor: default;
+}
+
+.contacts__item-btn {
+  position: relative;
+  padding-right: 17px;
+  border: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  background: none;
+  cursor: pointer;
+  display: block;
+  white-space: nowrap;
+  text-decoration: none;
+  color: #1a1a1a;
+  transition: 0.2s ease;
+}
+
+.contacts__item-btn:before {
+  content: " ";
+  position: absolute;
+  top: 9px;
+  right: 0;
+  border: 4px solid transparent;
+  border-top: 5px solid #1a1a1a;
+}
+
+.contacts__item-btn-active {
+  position: relative;
+  padding-right: 17px;
+  border: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  background: none;
+  cursor: pointer;
+  display: block;
+  white-space: nowrap;
+  text-decoration: none;
+  transition: 0.2s ease;
+  color: #909399;
+}
+
+.contacts__item-btn-active::before {
+  content: " ";
+  position: absolute;
+  bottom: 9px;
+  right: 0;
+  border: 4px solid transparent;
+  border-bottom: 5px solid #909399;
+}
+
+.contacts__working-time {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 28px;
+  padding-left: 13px;
+  color: #909399;
+}
+
+.contacts__working-time:before {
+  content: "";
+  position: absolute;
+  top: 6px;
+  left: 0;
+  display: block;
+  height: 16px;
+  border-left: 1px solid #d5d7db;
+}
+
+.contacts__working-icon {
+  height: 24px;
+}
+
+.contacts__working-clocks {
+  color: #d5d7db;
+}
+
+.contacts__working-text {
+  min-width: 74px;
+  margin-left: 2px;
+  font-size: 10px;
+  line-height: 14px;
+}
+
+.dropdown__comunications {
+  position: relative;
+  z-index: 9999;
+}
+
+.dropdown__list {
+  font-size: 14px;
+  line-height: 20px;
+  font-family: Helvetica, sans-serif;
+  position: absolute;
+  min-width: 224px;
+  padding: 12px 0;
+  border-radius: 6px;
+  background: #fff;
+  box-shadow: 0 4px 12px 0 rgb(41 44 51 / 12%), 0 2px 2px 0 rgb(41 44 51 / 4%);
+  z-index: 15;
+}
+
+.dropdown__list-sticky {
+  position: fixed;
+}
+
+.dropdown__center {
+  transform: translateX(-115%) translateY(5%);
+}
+
+li.dropdown__list-item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  text-decoration: none;
+  border: 0;
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 20px;
+  white-space: nowrap;
+  box-sizing: border-box;
+  height: 30px;
+  color: #1a1a1a;
+  transition: 0.2s ease;
+}
+
+li.dropdown__list-item > div {
+  display: flex;
+  align-items: center;
+}
+
+li.dropdown__list-item > * {
+  padding: 3px 16px;
+}
+
+li.dropdown__list-item .dropdown__item-box {
+  display: flex;
+}
+
+.dropdown__item-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 4px;
+}
+
+.dropdown__item-icon-life {
+  color: #052992;
+}
+
+.dropdown__item-telegram {
+  margin-right: 4px;
+}
+
+.dropdown__item-icon-telegram {
+  fill: #fff;
+  color: #39a9e0;
+}
+
+.styles_listItem__1ssEb a {
+  display: block;
+  text-decoration: none;
+  color: #1a1a1a;
+}
+
+.dropdown__item-box {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  text-decoration: none;
+  border: 0;
+  font-family: inherit;
+  font-size: inherit;
+  white-space: nowrap;
+  background: none;
+  color: #1a1a1a;
+  box-sizing: border-box;
+  cursor: pointer;
+  line-height: 20px;
+}
+
+.styles_listItem__1ssEb {
+  position: relative;
+  display: block;
+  white-space: nowrap;
+  color: #1a1a1a;
+  font-size: 14px;
+  transition: 0.2s ease;
+}
+
+.header__wrapper {
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.header__main {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 50%;
+  margin-right: 10%;
+}

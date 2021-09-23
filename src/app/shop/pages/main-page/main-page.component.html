@@ -1,0 +1,55 @@
+<p-carousel
+  [value]="products"
+  [autoplayInterval]="3000"
+  [circular]="true"
+  [numVisible]="3"
+>
+  <ng-template let-product pTemplate="item">
+    <div class="product-item" [routerLink]="['/main', 'item', product.id]">
+      <div class="product-item-content">
+        <div class="p-mb-3"></div>
+        <div>
+          <img
+            [src]="product.imageUrls[0]"
+            [alt]="product.name"
+            style="max-height: 200px"
+          />
+          <h4 class="p-mb-1">{{ product.name }}</h4>
+          <h6 class="p-mt-0 p-mb-3">${{ product.price }}</h6>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</p-carousel>
+
+<h4>Популярные товары</h4>
+
+<p-carousel
+  [value]="popular"
+  [numVisible]="3"
+  [numScroll]="4"
+  [circular]="false"
+>
+  <ng-template let-product pTemplate="item">
+    <div class="product-item">
+      <div class="product-item-content">
+        <div class="p-mb-3">
+          <img
+            [src]="product.imageUrls[0]"
+            [alt]="product.name"
+            style="max-height: 200px"
+          />
+        </div>
+        <div>
+          <h4 class="p-mb-1">{{ product.name }}</h4>
+          <h6 class="p-mt-0 p-mb-3">${{ product.price }}</h6>
+          <p-rating
+            [ngModel]="product.rating"
+            [readonly]="true"
+            [cancel]="false"
+          ></p-rating>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</p-carousel>
